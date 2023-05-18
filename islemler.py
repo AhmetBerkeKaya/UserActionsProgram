@@ -1,7 +1,5 @@
 import random
-liste = []
-kullaniciAdlari = []                                        # Listeler sonra kullanılmak üzere boş atanmıştır.
-kullaniciSifreleri = []
+liste, kullaniciAdlari, kullaniciSifreleri = [], [], []
 def yeni_kullanici():
     adGir = input("Kullanıcının Adı:")
     soyadGir = input("Kullanıcının Soyadı:")                                 # Kullanıcı oluşturmak için genel bilgiler alınıyor.
