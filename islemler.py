@@ -58,7 +58,7 @@ def anlik_uret():
                 data = line.strip().split(',')
                 idGir = data[-5]                                                                                         
         with open("bil104--projekullanicilar.txt","a",encoding= "utf-8") as file:                # Dosyaya alınan bilgiler işleniyor.
-            ekle = file.write(f"\n{int(idGir)+1},{adGir},{soyadGir},{dogumTarihiGir},{dogumYeriGir}")
+            ekle = file.write(f"\n{float(idGir)+1},{adGir},{soyadGir},{dogumTarihiGir},{dogumYeriGir}")
             liste.append(ekle)
     except:
         print("Dosya açılırken bir hata oluştu lütfen tekrar deneyiniz.\n")                      # Herhangi bir sorunda böyle bir mesaj iletiliyor.
@@ -84,7 +84,7 @@ def ortakIslemler():
             
             change_name = str(adı)[1] + str(adı)[3]
             change_surname = str(soyAdı)[-3:]
-            change_DT = int(dogumTarihi[3:5]) + int(dogumTarihi[6:10])
+            change_DT = float(dogumTarihi[3:5]) + float(dogumTarihi[6:10])
             change_dogumTarihi = str(change_DT) + str(dogumTarihi[-2:])
             kullanici_adi = str(change_surname) + str(change_name) + str(change_dogumTarihi) 
             print(f"Oluşturulan kullanıcı adınız :{kullanici_adi}")
@@ -92,7 +92,7 @@ def ortakIslemler():
             
             sifre_ad = str(adı[0]) + str(adı.upper()[-1])
             sifre_soyad = random.choice(karakter_dizisi) + str(soyAdı[-2])
-            sifre_DTarihi = str(dogumTarihi[-2:]) + str(int(dogumTarihi[3:5])**2)
+            sifre_DTarihi = str(dogumTarihi[-2:]) + str(float(dogumTarihi[3:5])**2)
             sifre_DYeri = str(dogumYeri[1:-2]).capitalize() + str(dogumYeri.upper()[-2])
             sifre_randomSayi = random.randint(10,100)
             kullanici_sifre = sifre_DYeri + str(sifre_randomSayi) + sifre_ad + sifre_DTarihi + sifre_soyad
