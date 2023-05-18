@@ -20,4 +20,5 @@ def main():                                         # Menüdeki seçime göre fo
         else:
             print("Hatalı Seçim!!!\n")
     
-main()
+if __name__ == "__main__":
+    main()
