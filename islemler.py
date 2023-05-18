@@ -45,7 +45,8 @@ def kullanici_getir():
         print("Dosya açılırken bir hata oluştu lütfen tekrar deneyiniz.\n")  
                
 def kullaniciAdi_sifre_uret():
-    ortakIslemler()                                                     #Uzun kod olmaması için işlemler fonksiyondan çağrılıyor.
+    if __name__ == "__ortakIslemler__":
+        ortakIslemler()                                                     #Uzun kod olmaması için işlemler fonksiyondan çağrılıyor.
              
 def anlik_uret():
     adGir = input("Kullanıcının Adı:")                               # Kullanıcıdan bilgi alımı
