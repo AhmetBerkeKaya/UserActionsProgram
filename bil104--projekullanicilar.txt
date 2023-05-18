@@ -9,5 +9,3 @@ id,Ad,Soyad,Dogum-Tarihi,Dogum-Yeri
 8,Steven,Gerard,15-05-1980,Liverpool
 9,Ahmet Berke,Kaya,05-07-2004,Konya
 10,Lionel,Messi,24-06-1987,Argentina
-11,dsdfsdvs,sadasddsa,10,adgdfdfhrfh
-12,asfasfafsdgfvdsgd,bdfbdbf,11,dfbhdfhd
