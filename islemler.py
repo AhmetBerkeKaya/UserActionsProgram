@@ -32,7 +32,7 @@ def kullanici_getir():
         with open("bil104--projekullanicilar.txt","r",encoding= "utf-8") as file:
             oku = file.read()                                                          
             rows = oku.split('\n')  
-            istenilen_satir = rows[getir].split(",")                                        # Kullanıcının istediği Id numarasına ait bilgileri almak için işlemler
+            istenilen_satir = rows[getir].split(",")              # Kullanıcının istediği Id numarasına ait bilgileri almak için işlemler
             id = istenilen_satir[0]
             adı = istenilen_satir[1]
             soyAdı = istenilen_satir[2]
@@ -46,23 +46,23 @@ def kullanici_getir():
                
 def kullaniciAdi_sifre_uret():
     if __name__ == "__ortakIslemler__":
-        ortakIslemler()                                                     #Uzun kod olmaması için işlemler fonksiyondan çağrılıyor.
+        ortakIslemler()                               #Uzun kod olmaması için işlemler fonksiyondan çağrılıyor.
              
 def anlik_uret():
-    adGir = input("Kullanıcının Adı:")                               # Kullanıcıdan bilgi alımı
+    adGir = input("Kullanıcının Adı:")                      # Kullanıcıdan bilgi alımı
     soyadGir = input("Kullanıcının Soyadı:")
     dogumTarihiGir = (input("Kullanıcının Doğum Tarihi:"))
     dogumYeriGir = input("Kullanıcının Doğum Yeri:")
     try:       
         with open("bil104--projekullanicilar.txt","r",encoding= "utf-8") as file: 
-            for line in file:                                                                     # Sıradaki kullanıcının Id numarasını buluyor.
+            for line in file:                                       # Sıradaki kullanıcının Id numarasını buluyor.
                 data = line.strip().split(',')
                 idGir = data[-5]                                                                                         
-        with open("bil104--projekullanicilar.txt","a",encoding= "utf-8") as file:                # Dosyaya alınan bilgiler işleniyor.
+        with open("bil104--projekullanicilar.txt","a",encoding= "utf-8") as file:         # Dosyaya alınan bilgiler işleniyor.
             ekle = file.write(f"\n{float(idGir)+1},{adGir},{soyadGir},{dogumTarihiGir},{dogumYeriGir}")
             liste.append(ekle)
     except:
-        print("Dosya açılırken bir hata oluştu lütfen tekrar deneyiniz.\n")                      # Herhangi bir sorunda böyle bir mesaj iletiliyor.
+        print("Dosya açılırken bir hata oluştu lütfen tekrar deneyiniz.\n")        # Herhangi bir sorunda böyle bir mesaj iletiliyor.
     finally:
         print("Kullanıcı başarıyla eklendi.\n")
     ortakIslemler()
@@ -76,7 +76,7 @@ def ortakIslemler():
             oku = file.read()
             kucult = oku.lower()
             rows = kucult.split('\n')
-            istenilen_satir = rows[getir].split(",")                                    # Kullanıcının istediği Id numarasına ait bilgileri almak için işlemler
+            istenilen_satir = rows[getir].split(",")    # Kullanıcının istediği Id numarasına ait bilgileri almak için işlemler
             id = istenilen_satir[0]
             adı = istenilen_satir[1]
             soyAdı = istenilen_satir[2]
@@ -99,8 +99,7 @@ def ortakIslemler():
             kullanici_sifre = sifre_DYeri + str(sifre_randomSayi) + sifre_ad + sifre_DTarihi + sifre_soyad
             kullaniciSifreleri.append(kullanici_sifre)
             print(f"Oluşturulan kullanıcı şifreniz: {kullanici_sifre}")
-            
-            
+        
             with open("kullaniciAdi_sifre.txt","a",encoding='utf-8') as file:
                 file.write(f"{id},{kullanici_adi},{kullanici_sifre}\n")
     except:
